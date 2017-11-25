@@ -1,17 +1,26 @@
 import { Component } from '@angular/core';
+import { IonicPage } from 'ionic-angular';
 
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
-
+@IonicPage({
+  name:'TabsPage'
+})
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  rajniti:any = 'RajnitiPage';
+  jatiow:any = 'JatiowPage';
+  Khela:any = 'KhelaPage';
+  krishi:any='KrishiPage';
+  nari: any = 'NariPage';
+  Orthoniti:any='OrthonitiPage';
+  probash:any='ProbashPage';
+  saradesh:any='SaradeshPage';
+  shongskriti:any='ShongskritiPage';
+  voganti:any ='VogantiPage';
+
+
 
   constructor() {
 
