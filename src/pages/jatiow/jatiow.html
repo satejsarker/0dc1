@@ -4,6 +4,11 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<style>
+    .hed-border {
+        -webkit-box-shadow: none;
+    }
+</style>
 <ion-header>
 
     <ion-navbar color="danger">
@@ -15,32 +20,32 @@
 
 
 <ion-content padding>
-   <div ion-card>
+    <div ion-card>
 
         <!-- Normal Demo-->
-        <div class="column" *ngFor="let user of users" >
+        <div class="column" *ngFor="let user of users">
             <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
             <!-- Post-->
             <div class="post-module">
                 <!-- Thumbnail-->
                 <div class="thumbnail">
-                   
-                    </div><img src="https://dbcnews.tv/images/uploads/159eb86c2dff4f.jpeg" />
-                </div>
-                <!-- Post Content-->
-                <div class="ion-content">
-                    <br>
-                    <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{user.title}} </h1>
-                    <h2 class="sub_title"></h2>
-                    <p class="description"> 
-                    </p>
-                    <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
-                </div>
+
+                </div><img src="{{user.coverphoto.photo}}" />
+            </div>
+            <!-- Post Content-->
+            <div class="ion-content">
+                <br>
+                <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{user.title}} </h1>
+                <h2 class="sub_title"></h2>
+                <p class="description">
+                </p>
+                <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
             </div>
         </div>
-    
+    </div>
 
-  <ion-infinite-scroll (ionInfinite)="doInfinite($event)"  *ngIf="totalData == totalPage">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more news..."></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="totalData == totalPage">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>

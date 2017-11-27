@@ -21,7 +21,9 @@ import{HttpClientModule} from '@angular/common/http'
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+
+
 
   ],
   bootstrap: [IonicApp],
@@ -36,4 +38,11 @@ import{HttpClientModule} from '@angular/common/http'
     MaindataProvider
   ]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private statusBar: StatusBar) {
+    this.statusBar.overlaysWebView(false);
+
+    // set status bar to white
+    this.statusBar.backgroundColorByHexString('#c82027');
+   }
+}

@@ -44,11 +44,11 @@ totalPage = 0;
   dataFatch(){
     this.dataSource.getData().subscribe(res=>{
       this.data = res;
-      for (let j=0;j<=1;j++){
+      for (let j=0;j<10;j++){
         this.users.push(this.data[j]);
       }
-         
-        
+
+
 
     })
   }
@@ -67,20 +67,20 @@ totalPage = 0;
            console.log(this.totalPage+ " -"+this.totalData);
            console.log(this.users.length);
            if(this.users.length<this.data.length){
-              for(let i=this.users.length; i<this.data.length; i++) {
+              for(let i=this.users.length; i<this.totalPage+10; i++) {
              this.users.push(this.data[i]);
            }
 
            }
-           
+
          }
        );
 
     console.log('Async operation has ended');
     infiniteScroll.complete();
-       
+
   }, 500);
-  
+
 }
   // doInfinite(): Promise<any>{
   //   console.log('Begin async operation');
