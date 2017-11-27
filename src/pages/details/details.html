@@ -1,15 +1,14 @@
 <!--
-  Generated template for the ShonskritiPage page.
+  Generated template for the DetailsPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-
 <ion-header>
 
-    <ion-navbar color="danger">
-
-        <ion-title>জাতীয়</ion-title>
+    <ion-navbar>
+        <ion-title>details</ion-title>
+        <button ion-button (click)=dismiss()><ion-icon name="close"></ion-icon></button>
     </ion-navbar>
 
 </ion-header>
@@ -19,29 +18,24 @@
     <div ion-card>
 
         <!-- Normal Demo-->
-        <div class="column" *ngFor="let user of users" (click)="details(user)">
+        <div class="column">
             <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
             <!-- Post-->
             <div class="post-module">
                 <!-- Thumbnail-->
                 <div class="thumbnail">
 
-                </div><img src="{{user.coverphoto.photo}}" />
+                </div><img src="{{DATA.coverphoto.photo}}" />
             </div>
             <!-- Post Content-->
             <div class="ion-content">
                 <br>
-                <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{user.title}} </h1>
+                <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{DATA.title}} </h1>
                 <h2 class="sub_title"></h2>
-                <p class="description">
+                <p class="description" [innerHTML]="DATA.details.description">
                 </p>
                 <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
             </div>
         </div>
     </div>
-
-    <!--*ngIf="totalData == totalPage"-->
-    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
-    </ion-infinite-scroll>
 </ion-content>

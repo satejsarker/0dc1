@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, ModalController } from 'ionic-angular';
 import { MaindataProvider } from '../../providers/maindata/maindata';
+import { modelGroupProvider } from '@angular/forms/src/directives/ng_model_group';
 
 /**
  * Generated class for the JatiowPage page.
@@ -20,11 +21,10 @@ export class JatiowPage {
   data: any;
 users=[];
 errorMessage: string;
-page = 1;
-
+fullData:any;
 totalData = 0;
 totalPage = 0;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public dataSource:MaindataProvider) {
+  constructor(public dataSource:MaindataProvider,public modalCtral:ModalController) {
     //   for (let i=0;i<2;i++){
     //   this.item.push(this.newsAll);
     //  }
@@ -62,12 +62,13 @@ totalPage = 0;
        .subscribe(
          res => {
            this.data = res;
+
            this.totalData=this.data.length;
            this.totalPage=this.users.length;
            console.log(this.totalPage+ " -"+this.totalData);
            console.log(this.users.length);
            if(this.users.length<this.data.length){
-              for(let i=this.users.length; i<this.totalPage+10; i++) {
+              for(let i=this.totalPage; i<this.totalPage+10; i++) {
              this.users.push(this.data[i]);
            }
 
@@ -82,34 +83,12 @@ totalPage = 0;
   }, 500);
 
 }
-  // doInfinite(): Promise<any>{
-  //   console.log('Begin async operation');
+ details(data){
+   let modal=this.modalCtral.create('DetailsPage',{datas:data});
+   modal.present();
 
-  //   return new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       for (var i = 0; i < 2; i++) {
-  //         this.item.push(this.newsAll);
 
-  //       }
-  //       console.log(this.item)
-
-  //       console.log('Async operation has ended');
-  //       resolve();
-  //     }, 500);
-  //   })
-  // }
-    // console.log("loading content started ");
-
-    // setTimeout(()=>{
-    //   for (let i=0;i<2;i++){
-    //     this.item.push(this.item.length+this.newsAll[this.item.length]);
-
-    //     console.log(this.item);
-    //     event.complete();
-    //   }
-    //   console.log("loading content stopped");
-    // },3000);
-
+ }
 
 
 
