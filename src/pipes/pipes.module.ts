@@ -1,11 +1,17 @@
-import { NgModule } from '@angular/core';
-import { DatePipe } from './date/date';
-import { DateFPipe } from './date-f/date-f';
+import { NgModule,Pipe } from '@angular/core';
+
+
+import { DateformPipe } from './dateform/dateform';
+import { StPipe } from './st/st';
 @NgModule({
-	declarations: [DatePipe,
-    DateFPipe],
+	declarations: [
+    DateformPipe,
+    StPipe
+  ],
 	imports: [],
-	exports: [DatePipe,
-    DateFPipe]
+	exports: [
+    DateformPipe,
+    StPipe,
+  ]
 })
 export class PipesModule {}

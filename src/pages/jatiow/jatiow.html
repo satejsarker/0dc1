@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-
+<script src="assets/moment.js"></script>
 <ion-header>
 
     <ion-navbar color="danger">
@@ -31,11 +31,11 @@
             <!-- Post Content-->
             <div class="ion-content">
                 <br>
-                <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{user.title}} </h1>
+                <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{user.title|st}} </h1>
                 <h2 class="sub_title"></h2>
                 <p class="description">
                 </p>
-                <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
+                <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-"></i> {{user.created_at|dateform }} ago</span><span class="comments"></span></div>
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ProbashPage } from './probash';
 
+
 @NgModule({
   declarations: [
     ProbashPage,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Pipe } from '@angular/core';
 import { IonicPage, ModalController } from 'ionic-angular';
 import { MaindataProvider } from '../../providers/maindata/maindata';
 import { modelGroupProvider } from '@angular/forms/src/directives/ng_model_group';
@@ -14,6 +14,8 @@ import { modelGroupProvider } from '@angular/forms/src/directives/ng_model_group
 @Component({
   selector: 'page-jatiow',
   templateUrl: 'jatiow.html',
+
+
 })
 export class JatiowPage {
   newsAll:any=[];

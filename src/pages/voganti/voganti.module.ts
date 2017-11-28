@@ -8,6 +8,7 @@ import { VogantiPage } from './voganti';
   ],
   imports: [
     IonicPageModule.forChild(VogantiPage),
+
   ],
 })
 export class VogantiPageModule {}

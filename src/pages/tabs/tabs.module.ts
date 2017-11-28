@@ -11,5 +11,8 @@ TabsPage
     IonicPageModule.forChild(TabsPage),
     SuperTabsModule.forRoot()
   ],
+  exports:[
+
+  ]
 })
 export class TabsPageModule {}
