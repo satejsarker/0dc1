@@ -18,4 +18,8 @@ export class MaindataProvider {
   getData(){
  return this.http.get('http://localhost:8000/homenational');
   }
+
+  getraj(){
+  return this.http.get('http://localhost:8000/homeinternational');
+}
 }

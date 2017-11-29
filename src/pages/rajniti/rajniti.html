@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-    <script>
+    <!--  <script>
         $(window).load(function() {
             $('.post-module').hover(function() {
                 $(this).find('.description').stop().animate({
@@ -23,61 +23,35 @@
                 }, 300);
             });
         });
-    </script>
+    </script> -->
 
     <div ion-card>
 
         <!-- Normal Demo-->
-        <div class="column">
+        <div class="column" *ngFor="let user of users" (click)="details(user)">
             <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
             <!-- Post-->
             <div class="post-module">
                 <!-- Thumbnail-->
                 <div class="thumbnail">
-                    <div class="date">
-                        <div class="day">23</div>
-                        <div class="month">Oct</div>
-                    </div><img src="https://dbcnews.tv/images/uploads/159e6ce7fa0b36.jpeg" />
-                </div>
-                <!-- Post Content-->
-                <div class="ion-content">
-                    <h1 class="title" style="font-size:x-large;">খালেদাকে গ্রেপ্তারের ইচ্ছা সরকারের নেই</h1>
-                    <h2 class="sub_title"></h2>
-                    &#160;
-                    <p class="description"> সকালে, রাজধানীর বনানী কবরস্থানে শেখ রাসেলের ৫৩তম জন্মদিন উপলক্ষে তার কবরে ফুল দিয়ে শ্রদ্ধা নিবেদন শেষে এ কথা বলেন তিনি। সড়ক পরিবহন ও সেতুমন্ত্রী ওবায়দুল কাদের বলেন, সরকার খালেদা জিয়াকে গ্রেপ্তারে কোন চিন্তা-ভাবনা করেনি। এখন আইনের ব্যাপারটা
-                        আইন প্রয়োগকারী সংস্থা জানে, আদালত জানে। এটা আদালতের গ্রেপ্তারি পরোয়ানা, এখানে সরকার কোনো গ্রেপ্তারি পরোয়ানা জারি করেনি। বিএনপি চেয়ারপারসন খালেদা জিয়ার দেশে ফেরা প্রসঙ্গে তিনি আরো বলেন, সংবর্ধনার নামে বিশৃঙ্খলা করলে ব্যবস্থা নেয়া
-                        হবে।
-                    </p>
-                    <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
-                </div>
+
+                </div><img src="{{user.coverphoto.photo}}" />
+            </div>
+            <!-- Post Content-->
+            <div class="ion-content">
+                <br>
+                <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{user.title|st}} </h1>
+                <h2 class="sub_title"></h2>
+                <p class="description">
+                </p>
+                <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-"></i> {{user.created_at|dateform }}</span><span class="comments"></span></div>
             </div>
         </div>
-        <div class="column">
-            <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
-            <!-- Post-->
-            <div class="post-module">
-                <!-- Thumbnail-->
-                <div class="thumbnail">
-                    <div class="date">
-                        <div class="day">23</div>
-                        <div class="month">Oct</div>
-                    </div><img src="https://dbcnews.tv/images/uploads/159eca821d4d99.jpeg" />
-                </div>
-                <!-- Post Content-->
-                <div class="ion-content">
-                    <h1 class="title" style="font-size:x-large;">অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</h1>
-                    <h2 class="sub_title"></h2>
-                    <p class="description">মাত্র ২৪ ঘন্টার জন্য ঢাকায় এসেছেন প্রতিবেশি ভারতের পররাষ্ট্রমন্ত্রী সুষমা স্বরাজ। তাঁর সঙ্গে সাক্ষাৎ করতে নির্ধারিত সময় রাত আটটায় হোটেল সোনারগাঁওয়ে আসেন বিএনপি চেয়ারপার্সন খালেদা জিয়া। এরপরই সুষমা স্বরাজের সঙ্গে বৈঠকে বসে খালেদা জিয়ার
-                        নেতৃত্বে আসা বিএনপির সাত সদস্যের প্রতিনিধি দল। প্রায় পৌনে একঘন্টা বৈঠকের পর বেরিয়ে আসেন খালেদা জিয়া। এরপরই রুদ্ধদ্বার বৈঠকের বিষয়বস্তু গণমাধ্যমকর্মীদের সামনে তুলে ধরেন দলটির মহাসচিব।</p>
-                    <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
-                </div>
-            </div>
-        </div>
-
-
-
     </div>
-    <br>
-    <br>
+
+    <!--*ngIf="totalData == totalPage"-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 
 </ion-content>

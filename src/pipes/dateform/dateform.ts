@@ -14,6 +14,6 @@ export class DateformPipe implements PipeTransform {
    * Takes a value and makes it lowercase.
    */
   transform(date) {
-    return moment(date).fromNow()
+    return moment(date).fromNow();
   }
 }

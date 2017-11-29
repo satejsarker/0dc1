@@ -1,40 +1,45 @@
-<!--
-  Generated template for the DetailsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+<style>
+    .button-fix {
+        position: absolute;
+    }
+</style>
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>details</ion-title>
-        <button ion-button (click)=dismiss()><ion-icon name="close"></ion-icon></button>
-    </ion-navbar>
+    <ion-toolbar color="danger">
+        <ion-title>বিস্তারিত</ion-title>
+
+    </ion-toolbar>
+    <button ion-button (click)=dismiss() class="button-fix button-f"><ion-icon name="close"></ion-icon></button>
 
 </ion-header>
 
 
 <ion-content padding>
+
     <div ion-card>
 
         <!-- Normal Demo-->
+
         <div class="column">
             <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
             <!-- Post-->
+
             <div class="post-module">
                 <!-- Thumbnail-->
+
                 <div class="thumbnail">
 
                 </div><img src="{{DATA.coverphoto.photo}}" />
             </div>
             <!-- Post Content-->
+
             <div class="ion-content">
                 <br>
                 <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{DATA.title}} </h1>
                 <h2 class="sub_title"></h2>
                 <p class="description" [innerHTML]="DATA.details.description">
                 </p>
-                <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-"></i>{{DATA.created_at }} ago</span><span class="comments"></span></div>
+                <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-"></i>{{DATA.created_at|dateform}} </span><span class="comments"></span></div>
             </div>
         </div>
     </div>

@@ -47,3 +47,13 @@ $colors: ( primary: #488aff, secondary: #32db64, danger: #f02929, light: #f4f4f4
 // --------------------------------------------------
 @import "roboto";
 @import "noto-sans";
+ion-spinner {
+    * {
+        stroke: rgb(255, 0, 55) !important;
+    }
+    &.spinner-circles circle,
+    &.spinner-bubbles circle,
+    &.spinner-dots circle {
+        fill: rgb(255, 0, 55) !important;
+    }
+}
