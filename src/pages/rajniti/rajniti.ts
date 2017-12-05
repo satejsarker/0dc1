@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController } from 'ionic-angular';
 import { MaindataProvider } from '../../providers/maindata/maindata';
+import { NavController } from 'ionic-angular/navigation/nav-controller';
 
 
 @IonicPage()
@@ -17,7 +18,7 @@ fullData:any;
 totalData = 0;
 totalPage = 0;
 
-  constructor(public modalCtral:ModalController,public dataSource:MaindataProvider) {
+  constructor(public modalCtral:ModalController,public dataSource:MaindataProvider,private navCtrl:NavController) {
     this.dataFatch();
   }
 
@@ -65,8 +66,9 @@ totalPage = 0;
 
   }
    details(data){
-     let modal=this.modalCtral.create('DetailsPage',{datas:data});
-     modal.present();
+    //  let modal=this.modalCtral.create('DetailsPage',{datas:data});
+    //  modal.present();
+    this.navCtrl.push('DetailsPage',{datas:data})
 
 
    }

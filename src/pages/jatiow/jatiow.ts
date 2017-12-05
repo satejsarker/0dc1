@@ -2,6 +2,7 @@ import { Component, Pipe } from '@angular/core';
 import { IonicPage, ModalController } from 'ionic-angular';
 import { MaindataProvider } from '../../providers/maindata/maindata';
 import { modelGroupProvider } from '@angular/forms/src/directives/ng_model_group';
+import { NavController } from 'ionic-angular/navigation/nav-controller';
 
 /**
  * Generated class for the JatiowPage page.
@@ -22,16 +23,16 @@ export class JatiowPage {
   item:string[];
   data: any;
 users=[];
-errorMessage: string;
 fullData:any;
 totalData = 0;
 totalPage = 0;
-  constructor(public dataSource:MaindataProvider,public modalCtral:ModalController) {
+  constructor(public dataSource:MaindataProvider,public modalCtral:ModalController,private nav:NavController) {
     //   for (let i=0;i<2;i++){
     //   this.item.push(this.newsAll);
     //  }
     //  console.log(this.item);
     this.dataFatch();
+    console.log(this.dataFatch())
 
 
   }
@@ -86,9 +87,9 @@ totalPage = 0;
 
 }
  details(data){
-   let modal=this.modalCtral.create('DetailsPage',{datas:data});
-   modal.present();
-
+  //  let modal=this.modalCtral.create('DetailsPage',{datas:data});
+  //  modal.present();
+this.nav.push('DetailsPage',{datas:data})
 
  }
 

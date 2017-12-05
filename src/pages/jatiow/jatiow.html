@@ -15,14 +15,14 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
     <div ion-card>
 
         <!-- Normal Demo-->
         <div class="column" *ngFor="let user of users" (click)="details(user)">
             <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
             <!-- Post-->
-            <div class="post-module">
+            <div class="post-module homeimg">
                 <!-- Thumbnail-->
                 <div class="thumbnail">
 
@@ -31,7 +31,7 @@
             <!-- Post Content-->
             <div class="ion-content">
                 <br>
-                <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{user.title|st}} </h1>
+                <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{user.details.headline}} </h1>
                 <h2 class="sub_title"></h2>
                 <p class="description">
                 </p>

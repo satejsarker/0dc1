@@ -16,10 +16,12 @@ export class MaindataProvider {
   }
 
   getData(){
- return this.http.get('http://localhost:8000/homenational');
+ return this.http.get('http://bdsportsnews71.com/homenational');
   }
 
   getraj(){
-  return this.http.get('http://localhost:8000/homeinternational');
+
+  return this.http.get('http://bdsportsnews71.com/homepolitics');
+
 }
 }
