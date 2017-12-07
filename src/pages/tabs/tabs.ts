@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
 
 
+
 @IonicPage({
   name:'TabsPage'
 })
@@ -14,6 +15,7 @@ export class TabsPage {
 
   rajniti:any = 'RajnitiPage';
   jatiow:any = 'JatiowPage';
+   antorjatik:any="AntorjatikPage";
   Khela:any = 'KhelaPage';
   krishi:any='KrishiPage';
   nari: any = 'NariPage';

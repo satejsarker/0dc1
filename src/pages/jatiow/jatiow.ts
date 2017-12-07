@@ -1,7 +1,7 @@
 import { Component, Pipe } from '@angular/core';
 import { IonicPage, ModalController } from 'ionic-angular';
 import { MaindataProvider } from '../../providers/maindata/maindata';
-import { modelGroupProvider } from '@angular/forms/src/directives/ng_model_group';
+
 import { NavController } from 'ionic-angular/navigation/nav-controller';
 
 /**

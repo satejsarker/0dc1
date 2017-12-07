@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { NariPage } from './nari';
+import { PipesModule } from '../../pipes/pipes.module';
 
 
 @NgModule({
@@ -8,6 +9,7 @@ import { NariPage } from './nari';
     NariPage,
   ],
   imports: [
+    PipesModule,
     IonicPageModule.forChild(NariPage),
 
   ],

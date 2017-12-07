@@ -1,71 +1,35 @@
-<!--
-  Generated template for the NariPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
     <ion-navbar color="danger">
+
         <ion-title>নারী</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <div ion-card>
+<ion-content fullscreen>
+    <ion-card *ngFor='let user of users' (click)="details(user)">
 
-        <!-- Normal Demo-->
-        <div class="column">
-            <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
-            <!-- Post-->
-            <div class="post-module">
-                <!-- Thumbnail-->
-                <div class="thumbnail">
-                    <div class="date">
-                        <div class="day">21</div>
-                        <div class="month">Oct</div>
-                    </div><img src="https://dbcnews.tv/images/uploads/159eb86c2dff4f.jpeg" />
-                </div>
-                <!-- Post Content-->
-                <div class="ion-content">
-                    <br>
-                    <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> নারীদের নিয়ে আলাদা করমেলা করা হবে </h1>
-                    <h2 class="sub_title"></h2>
-                    <p class="description"> রাজস্ব আহরণে গতিশীলতা আনতে পরীক্ষামূলকভাবে এই নারী কর মেলার আয়োজন করা হবে বলে জানিয়েছেন জাতীয় রাজস্ব বোর্ডের চেয়ারম্যান মো: নজিবুর রহমান। বিকেলে চট্টগ্রাম কাস্টম হাউসে নারী উদ্যোক্তা সহায়তা কেন্দ্র উদ্বোধন করে তিনি আরো বলেন, চট্টগ্রাম
-                        বন্দরে কন্টেইনারের ব্যাপক জট কমাতে পণ্য সরবরাহ ও কাস্টমসের কার্যক্রম সপ্তাহের সাতদিনই ২৪ ঘণ্টা খোলা রাখা হচ্ছে। এর ফলে আমদানি ও রপ্তানিকারকরা উপকৃত হচ্ছেন। রাজস্ব আদায়ের হার এ বছর আগের তুলনায় বেড়েছে বলেও অনুষ্ঠানে জানান এনবিআর
-                        চেয়ারম্যান।
-                    </p>
-                    <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
-                </div>
-            </div>
-        </div>
-        <br>
+        <img src="{{user.coverphoto.photo}}" />
 
-        <div class="column">
-            <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
-            <!-- Post-->
-            <div class="post-module">
-                <!-- Thumbnail-->
-                <div class="thumbnail">
-                    <div class="date">
-                        <div class="day">21</div>
-                        <div class="month">Oct</div>
-                    </div><img src="https://dbcnews.tv/images/uploads/159ed7449c0476.jpeg" />
-                </div>
-                <!-- Post Content-->
-                <div class="ion-content">
-                    <h1 class="title" style="font-size:x-large; font-weight:bold;"> <br>বিনামূল্যে নারীদের সিম দেবে টেলিটক</h1>
-                    <h2 class="sub_title"></h2>
-                    <p class="description"><br>সহজে ইন্টারনেটে প্রবেশ ও স্বল্পমূল্যে ফোন করার মাধ্যমে নারীর ক্ষমতায়নের লক্ষ্যে এ কর্মসূচি নিয়েছে টেলিটক। রবিবার দুপুরে ডাক ও টেলিযোগাযোগ প্রতিমন্ত্রী তারানা হালিম সচিবালয়ে ‘অপরাজিতা’ নামের এই সিম বিতরণ কার্যক্রমের উদ্বোধনী অনুষ্ঠানে
-                        এ ঘোষণা দেন।
-                    </p>
-                    <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
+        <ion-card-content style="text-align:center;">
+            {{user.details.headline}}
+        </ion-card-content>
+
+        <ion-row>
+
+
+            <ion-col center text-center>
+                <ion-note>
+                    {{user.created_at|dateform }}
+                </ion-note>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+    <!--*ngIf="totalData == totalPage"-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>

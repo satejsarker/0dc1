@@ -16,7 +16,8 @@ export class MaindataProvider {
   }
 
   getData(){
- return this.http.get('http://bdsportsnews71.com/homenational');
+//  return this.http.get('http://182.48.84.88:8080/dbc');
+return this.http.get('http://bdsportsnews71.com/homenational');
   }
 
   getraj(){
@@ -24,4 +25,28 @@ export class MaindataProvider {
   return this.http.get('http://bdsportsnews71.com/homepolitics');
 
 }
+getkrishi(){
+
+    return this.http.get('http://bdsportsnews71.com/homepolitics');
+
+  }
+  getinternational(){
+    return this.http.get('http://182.48.84.88:8080/dbc');
+  }
+  getsports(){
+    return this.http.get('http://www.bdsportsnews71.com/homesports');
+  }
+  geteeconomy(){
+    return this.http.get('http://www.bdsportsnews71.com/homeeconomy');
+  }
+  getCulture(){
+    return this.http.get('http://www.bdsportsnews71.com/homeculture');
+  }
+getAgriculture(){
+  return this.http.get('http://www.bdsportsnews71.com/homeagriculture');
+}
+getWomen(){
+  return this.http.get('http://www.bdsportsnews71.com/homewomen');
+}
+
 }

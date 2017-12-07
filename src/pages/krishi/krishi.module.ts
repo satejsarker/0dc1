@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { KrishiPage } from './krishi';
+import { PipesModule } from '../../pipes/pipes.module';
 
 
 @NgModule({
@@ -8,6 +9,7 @@ import { KrishiPage } from './krishi';
     KrishiPage,
   ],
   imports: [
+    PipesModule,
     IonicPageModule.forChild(KrishiPage),
 
   ],

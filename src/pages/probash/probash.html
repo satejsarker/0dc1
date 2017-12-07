@@ -1,71 +1,35 @@
-<!--
-  Generated template for the ProbashPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
     <ion-navbar color="danger">
+
         <ion-title>প্রবাস</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content fullscreen>
+    <ion-card *ngFor='let user of users' (click)="details(user)">
 
-    <div ion-card>
+        <img src="{{user.coverphoto.photo}}" />
 
-        <!-- Normal Demo-->
-        <div class="column">
-            <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
-            <!-- Post-->
-            <div class="post-module">
-                <!-- Thumbnail-->
-                <div class="thumbnail">
-                    <div class="date">
-                        <div class="day">21</div>
-                        <div class="month">Oct</div>
-                    </div><img src="https://dbcnews.tv/images/uploads/159ed1d769179b.jpeg" />
-                </div>
-                <!-- Post Content-->
-                <div class="ion-content">
-                    <br>
-                    <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;">যুক্তরাষ্ট্রে শ্যামাপূজা ও দীপাবলি উৎসব</h1>
-                    <h2 class="sub_title"></h2>
-                    <p class="description"> বাংলাদেশ হিন্দু রেলিজিয়াস ওয়েলফেয়ার অর্গানাইজেশন অব নিউজার্সি এ উৎসবের আয়োজন করে। নিউজার্সি থেকে বিশ্বজিৎ দে বাবলু জানান, শুক্রবার সন্ধ্যায় প্রিয়েকনেস এভিনিউর মহাত্মা গান্ধী মন্দিরে দীপাবলি ও রাতে শ্যামাপূজা হয়। নিউজার্সির বিভিন্ন
-                        শহর থেকে পূজা মন্ডপে ভিড় করেন হিন্দু ধর্মাবলম্বীরা। এসময় তারা প্রদীপ ও মোমবাতি জ্বালিয়ে দীপাবলি উৎসব উদযাপন করেন।
-                    </p>
-                    <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
-                </div>
-            </div>
-        </div>
-        <br><br>
-        <div class="column">
-            <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
-            <!-- Post-->
-            <div class="post-module">
-                <!-- Thumbnail-->
-                <div class="thumbnail">
-                    <div class="date">
-                        <div class="day">21</div>
-                        <div class="month">Oct</div>
-                    </div><img src="https://dbcnews.tv/images/uploads/159ed25c8b1e02.jpeg" />
-                </div>
-                <!-- Post Content-->
-                <div class="ion-content">
-                    <h1 class="title" style="font-size:x-large; font-weight:bold;"> <br>কাতারে বাংলাদেশি রেস্টুরেন্টের উদ্বোধন</h1>
-                    <h2 class="sub_title"></h2>
-                    <p class="description"><br>প্রবাসীদের কম মূল্যে দেশীয় খাবার পরিবেশনের লক্ষ্য নিয়ে এ রেস্টুরেন্টের যাত্রা শুরু হলো। কাতার থেকে আমিনুল ইসলাম জানান, রেস্টুরেন্টের মালিক মোহাম্মদ ইমরান, আরিফুল ইসলাম, আব্দুল কাদের ও আলাউদ্দিন আল আজাদকে সাথে নিয়ে রেন্টুরেন্টের
-                        উদ্বোধন করেন কাতারি স্পন্সর সুলতান আব্দুল্লাহ হেলাল আল মনসুরী। এতে, বিশেষ অতিথি ছিলেন অধ্যাপক এ কে এম আমিনুল হক, মোহাম্মদ শাহ আলম, মুক্তিযোদ্ধা আবদুল খালেক, লোকমান আহমদ সহ অনেকে। </p>
-                    <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
+        <ion-card-content style="text-align:center;">
+            {{user.details.headline}}
+        </ion-card-content>
+
+        <ion-row>
+
+
+            <ion-col center text-center>
+                <ion-note>
+                    {{user.created_at|dateform }}
+                </ion-note>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+    <!--*ngIf="totalData == totalPage"-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>

@@ -1,18 +1,35 @@
-<!--
-  Generated template for the AntorjatikPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>antorjatik</ion-title>
-  </ion-navbar>
+    <ion-navbar color="danger">
+
+        <ion-title>আন্তর্জাতিক</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content fullscreen>
+    <ion-card *ngFor='let user of users'>
 
+        <img src="{{user.photo}}" />
+
+        <ion-card-content>
+            {{user.headline}}
+        </ion-card-content>
+
+        <ion-row>
+
+
+            <ion-col center text-center>
+                <ion-note>
+                    {{user.created_at|dateform }}
+                </ion-note>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+    <!--*ngIf="totalData == totalPage"-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>

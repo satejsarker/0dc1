@@ -26,6 +26,7 @@ export class MyApp {
       this.pages=[
           {title: "জাতীয়",component:'JatiowPage'},
                 {title:'রাজনীতি',component:'RajnitiPage'},
+                 {title:'আন্তর্জাতিক',component:'AntorjatikPage'},
                 {title:'অর্থনীতি',component:'OrthonitiPage'},
                 {title:"খেলা",component:'KhelaPage'},
                 {title:"কৃষি",component:'KrishiPage'},

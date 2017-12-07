@@ -15,31 +15,26 @@
 </ion-header>
 
 
-<ion-content>
-    <div ion-card>
+<ion-content fullscreen>
+    <ion-card *ngFor='let user of users' (click)="details(user)">
 
-        <!-- Normal Demo-->
-        <div class="column" *ngFor="let user of users" (click)="details(user)">
-            <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
-            <!-- Post-->
-            <div class="post-module homeimg">
-                <!-- Thumbnail-->
-                <div class="thumbnail">
+        <img src="{{user.coverphoto.photo}}" />
 
-                </div><img src="{{user.coverphoto.photo}}" />
-            </div>
-            <!-- Post Content-->
-            <div class="ion-content">
-                <br>
-                <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{user.details.headline}} </h1>
-                <h2 class="sub_title"></h2>
-                <p class="description">
-                </p>
-                <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-"></i> {{user.created_at|dateform }}</span><span class="comments"></span></div>
-            </div>
-        </div>
-    </div>
+        <ion-card-content style="text-align:center;">
+            {{user.details.headline}}
+        </ion-card-content>
 
+        <ion-row>
+
+
+            <ion-col center text-center>
+                <ion-note>
+                    {{user.created_at|dateform }}
+                </ion-note>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
     <!--*ngIf="totalData == totalPage"-->
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
         <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>

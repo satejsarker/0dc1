@@ -35,9 +35,11 @@ import{HttpClientModule} from '@angular/common/http'
 })
 export class AppModule {
   constructor(private statusBar: StatusBar) {
-    this.statusBar.overlaysWebView(false);
+    this.statusBar.overlaysWebView(true);
+
 
     // set status bar to white
-    this.statusBar.backgroundColorByHexString('#c82027');
+    this.statusBar.backgroundColorByName("red");
+    this.statusBar.show();
    }
 }
