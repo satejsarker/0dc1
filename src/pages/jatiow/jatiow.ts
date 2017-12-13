@@ -1,8 +1,8 @@
 import { Component, Pipe } from '@angular/core';
-import { IonicPage, ModalController } from 'ionic-angular';
+import { IonicPage, ModalController,AlertController } from 'ionic-angular';
 import { MaindataProvider } from '../../providers/maindata/maindata';
-
 import { NavController } from 'ionic-angular/navigation/nav-controller';
+import { Network } from '@ionic-native/network';
 
 /**
  * Generated class for the JatiowPage page.
@@ -23,14 +23,45 @@ export class JatiowPage {
   item:string[];
   data: any;
 users=[];
+status:any='';
 fullData:any;
 totalData = 0;
 totalPage = 0;
-  constructor(public dataSource:MaindataProvider,public modalCtral:ModalController,private nav:NavController) {
+  constructor(public dataSource:MaindataProvider,public modalCtral:ModalController,private nav:NavController,
+  private network:Network, private alertCtrl:AlertController) {
     //   for (let i=0;i<2;i++){
     //   this.item.push(this.newsAll);
     //  }
-    //  console.log(this.item);
+    //  console.log(this.item)
+    this.network.onDisconnect().subscribe(() => {
+      console.log('network was disconnected :-(');
+
+      setTimeout(() => {
+        this.status='disconnected';
+        this.presentAlert(this.status);
+      }, 2000);
+
+
+    });
+
+    this.network.onConnect().subscribe(()=>{
+      console.log('network connected!');
+      this.status='connected '
+
+       this.presentAlert(this.status);
+
+      setTimeout(() => {
+        if (this.network.type === 'wifi') {
+          console.log('we got a wifi connection, woohoo!');
+          this.status='wifi'
+          this.presentAlert(this.status);
+        }
+        else{
+          this.status='mobile network'
+          this.presentAlert(this.status);
+        }
+      }, 3000);
+    });
     this.dataFatch();
     console.log(this.dataFatch())
 
@@ -54,6 +85,14 @@ totalPage = 0;
 
 
     })
+  }
+  presentAlert(value) {
+    let alert = this.alertCtrl.create({
+      title: 'Network',
+      subTitle: value,
+      buttons: ['Dismiss']
+    });
+    alert.present();
   }
 
 

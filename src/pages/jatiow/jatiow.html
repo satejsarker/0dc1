@@ -17,9 +17,7 @@
 
 <ion-content fullscreen>
     <ion-card *ngFor='let user of users' (click)="details(user)">
-
         <img src="{{user.coverphoto.photo}}" />
-
         <ion-card-content style="text-align:center;">
             {{user.details.headline}}
         </ion-card-content>

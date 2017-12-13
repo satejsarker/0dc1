@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MaindataProvider } from '../providers/maindata/maindata';
 import{HttpClientModule} from '@angular/common/http'
+import   {Network} from '@ionic-native/network';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import{HttpClientModule} from '@angular/common/http'
   providers: [
     StatusBar,
     SplashScreen,
+    Network,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MaindataProvider
   ],
@@ -39,7 +41,7 @@ export class AppModule {
 
 
     // set status bar to white
-    this.statusBar.backgroundColorByName("red");
+    this.statusBar.backgroundColorByHexString('#f02929');
     this.statusBar.show();
    }
 }

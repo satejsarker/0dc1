@@ -1,72 +1,35 @@
-<!--
-  Generated template for the VogantiPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
     <ion-navbar color="danger">
+
         <ion-title>ভোগান্তি</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <div ion-card>
+<ion-content fullscreen>
+    <ion-card *ngFor='let user of users' (click)="details(user)">
 
-        <!-- Normal Demo-->
-        <div class="column">
-            <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
-            <!-- Post-->
-            <div class="post-module">
-                <!-- Thumbnail-->
-                <div class="thumbnail">
-                    <div class="date">
-                        <div class="day">21</div>
-                        <div class="month">Oct</div>
-                    </div><img src="https://dbcnews.tv/images/uploads/159ed5168a9aea.jpeg" />
-                </div>
-                <!-- Post Content-->
-                <div class="ion-content">
-                    <br>
-                    <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;">দখল আর দূষণে বিপর্যস্ত চিত্রা নদী</h1>
-                    <h2 class="sub_title"></h2>
-                    <p class="description"> পানির অভাবে এরই মধ্যে হারিয়ে গেছে অসংখ্য প্রজাতির মাছ, পাশাপাশি নষ্ট হচ্ছে পরিবেশের ভারসাম্য। নড়াইল শহরের পাশ ঘেঁষে বয়ে যাওয়া চিত্রা নদী একসময় ছবির মতোই সুন্দর ছিলো। তাই এর নাম হয়েছিলো চিত্রা। কিন্তু ক্রমাগত দখল আর দূষণে সেই সৌন্দর্য
-                        আজ খুঁজে পাওয়াই ভার। দখল আর দূষণের কবলে পড়ে হারিয়ে গেছে অসংখ্য প্রজাতির সুস্বাদু মাছের ভাণ্ডার এ নদীটি। অন্যান্য জলজ প্রাণীর জীবনধারনেরও উপযুক্ততা নেই আর। নদীর পাঁচ কিলোমিটার পুনঃখননের জন্য একটি প্রকল্প হাতে নেয়া হয়েছে যা বাস্তবায়ন
-                        হলে পানির প্রবাহ ও জলজ জীববৈচিত্র্য ফিরিয়ে আনা সম্ভব হবে বলে মনে করেন পানি উন্নয়ন বোর্ডের প্রকৌশলী মো. শাহনেওয়াজ।
-                    </p>
-                    <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
-                </div>
-            </div>
-        </div>
-        <br><br>
-        <div class="column">
-            <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
-            <!-- Post-->
-            <div class="post-module">
-                <!-- Thumbnail-->
-                <div class="thumbnail">
-                    <div class="date">
-                        <div class="day">21</div>
-                        <div class="month">Oct</div>
-                    </div><img src="https://dbcnews.tv/images/uploads/159ed454de1305.jpeg" />
-                </div>
-                <!-- Post Content-->
-                <div class="ion-content">
-                    <h1 class="title" style="font-size:x-large; font-weight:bold;"> <br>৪৫ বছরে প্রশস্ত হয়নি সুনামগঞ্জ-সিলেট সড়ক</h1>
-                    <h2 class="sub_title"></h2>
-                    <p class="description"><br>৬৪ কিলোমিটারের এই সড়কে প্রতিদিনই চলাচল করে কয়েক হাজার যানবাহন। সড়কটি এমনিতেই সরু, তার ওপর দু'পাশে রাখা হয়েছে কয়েক হাজার বৈদ্যুতিক খুঁটি। তাই যানজটের সঙ্গে প্রায়ই ঘটছে দুর্ঘটনা। সুনামগঞ্জ-সিলেট আন্তঃজেলা সড়ক নির্মাণ হয়েছিল প্রায়
-                        অর্ধ শতাব্দী আগে। তারপর, কয়েকবার সংস্কার করা হলেও কখনো প্রশস্ত করা হয়নি সড়কটি। ৬৪ কিলোমিটারের এই সড়কের প্রস্থ মাত্র ১৮ ফুট। এর ওপর দিয়েই চলাচল করছে বাস, মিনিবাস, ট্রাক, লরি। দু'টি যানবাহন কোনভাবেই একসঙ্গে অতিক্রম করতে পারে না সড়কটিতে।
-                        অন্তত ১০টি পয়েন্টে প্রতিদিনই লেগে থাকে যানজট। তাছাড়া, সরু সড়কের দু'পাশের মাটি সরে গিয়ে সৃষ্টি হয়েছে মরণ ফাঁদ। প্রায়ই ঘটছে ছোট-বড় দুর্ঘটনা।</p>
-                    <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
+        <img src="{{user.coverphoto.photo}}" />
+
+        <ion-card-content style="text-align:center;">
+            {{user.details.headline}}
+        </ion-card-content>
+
+        <ion-row>
+
+
+            <ion-col center text-center>
+                <ion-note>
+                    {{user.created_at|dateform }}
+                </ion-note>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+    <!--*ngIf="totalData == totalPage"-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>
