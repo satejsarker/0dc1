@@ -1,4 +1,4 @@
-import { Component, Pipe } from '@angular/core';
+import { Component} from '@angular/core';
 import { IonicPage, ModalController,AlertController } from 'ionic-angular';
 import { MaindataProvider } from '../../providers/maindata/maindata';
 import { NavController } from 'ionic-angular/navigation/nav-controller';
@@ -33,40 +33,53 @@ totalPage = 0;
     //   this.item.push(this.newsAll);
     //  }
     //  console.log(this.item)
-    this.network.onDisconnect().subscribe(() => {
-      console.log('network was disconnected :-(');
+     this.network.onDisconnect().subscribe(() => {
+   console.log('network was disconnected :-(');
 
       setTimeout(() => {
-        this.status='disconnected';
+      this.status='disconnected';
         this.presentAlert(this.status);
-      }, 2000);
+      }, 4000);
 
 
-    });
+   });
 
-    this.network.onConnect().subscribe(()=>{
-      console.log('network connected!');
-      this.status='connected '
+    // this.network.onConnect().subscribe(()=>{
+    //   console.log('network connected!');
+    //   this.status='connected '
 
-       this.presentAlert(this.status);
 
-      setTimeout(() => {
-        if (this.network.type === 'wifi') {
-          console.log('we got a wifi connection, woohoo!');
-          this.status='wifi'
-          this.presentAlert(this.status);
-        }
-        else{
-          this.status='mobile network'
-          this.presentAlert(this.status);
-        }
-      }, 3000);
-    });
-    this.dataFatch();
+
+    //   setTimeout(() => {
+    //     // if (this.network.type === 'wifi') {
+    //     //   console.log('we got a wifi connection, woohoo!');
+    //     //   this.status='wifi'
+    //     //   this.presentAlert(this.status);
+    //     // }
+    //     // else{
+    //       this.presentAlert(this.status);
+    //     //}
+    //   }, 1000);
+    // });
+   this.doRefresh(0);
     console.log(this.dataFatch())
+  }
+
+  doRefresh(refresh){
+    this.dataFatch();
+
+    if (refresh !=0){
+      setTimeout(() => {
+        console.log('Async operation has ended');
+        refresh.complete();
+      }, 1000);
+
+    }
 
 
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad JatiowPage');

@@ -32,6 +32,7 @@ export class MyApp {
                 {title:"কৃষি",component:'KrishiPage'},
                 {title:"নারী",component:'NariPage'},
                 {title:"প্রবাস",component:'ProbashPage'},
+                {title:"স্পেশাল",component:'SpecialPage'},
                 {title:"সারাদেশ", component:'SaradeshPage'},
                 {title:"সংস্কৃতি",component:'ShongskritiPage'},
                 {title:"ভোগান্তি",component:'VogantiPage'},

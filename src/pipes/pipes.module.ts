@@ -1,4 +1,4 @@
-import { NgModule,Pipe } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 
 import { DateformPipe } from './dateform/dateform';

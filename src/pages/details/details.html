@@ -29,7 +29,7 @@
 
                 <div class="thumbnail ">
 
-                </div><img src="{{DATA.coverphoto.photo}}" />
+                </div><img src="{{DATA.photo}}" />
             </div>
             <!-- Post Content-->
 
@@ -37,7 +37,7 @@
                 <br>
                 <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{DATA.headline}} </h1>
                 <h2 class="sub_title"></h2>
-                <p class="description" [innerHTML]="DATA.details.description">
+                <p class="description" [innerHTML]="DATA.description">
                 </p>
                 <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-"></i>{{DATA.created_at|dateform}} </span><span class="comments"></span></div>
             </div>

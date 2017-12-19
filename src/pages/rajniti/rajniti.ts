@@ -19,9 +19,21 @@ totalData = 0;
 totalPage = 0;
 
   constructor(public modalCtral:ModalController,public dataSource:MaindataProvider,private navCtrl:NavController) {
-    this.dataFatch();
-  }
+    this.doRefresh(0);
 
+
+      }
+      doRefresh(refresh){
+        this.dataFatch();
+
+        if (refresh !=0){
+          setTimeout(() => {
+            console.log('Async operation has ended');
+            refresh.complete();
+          }, 2000);
+
+        }
+      }
   ionViewDidLoad() {
     console.log('ionViewDidLoad RajnitiPage');
   }

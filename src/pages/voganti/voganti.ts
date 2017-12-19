@@ -28,13 +28,21 @@ totalPage = 0;
     //   for (let i=0;i<2;i++){
     //   this.item.push(this.newsAll);
     //  }
-    //  console.log(this.item);
-    this.dataFatch();
-    console.log(this.dataFatch())
+    this.doRefresh(0);
 
 
-  }
+      }
+      doRefresh(refresh){
+        this.dataFatch();
 
+        if (refresh !=0){
+          setTimeout(() => {
+            console.log('Async operation has ended');
+            refresh.complete();
+          }, 1000);
+
+        }
+      }
   ionViewDidLoad() {
     console.log('ionViewDidLoad JatiowPage');
     // this.dataSource.getData().subscribe(data=>{
@@ -43,7 +51,7 @@ totalPage = 0;
     // })
   }
   dataFatch(){
-    this.dataSource.getkrishi().subscribe(res=>{
+    this.dataSource.getvoganti().subscribe(res=>{
       this.data = res;
       for (let j=0;j<10;j++){
         this.users.push(this.data[j]);
@@ -59,7 +67,7 @@ totalPage = 0;
   doInfinite(infiniteScroll) {
   setTimeout(() => {
     console.log('Async operation has started');
-   this.dataSource.getkrishi()
+   this.dataSource.getvoganti()
        .subscribe(
          res => {
            this.data = res;

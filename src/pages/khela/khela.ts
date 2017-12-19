@@ -29,10 +29,20 @@ totalPage = 0;
     //   this.item.push(this.newsAll);
     //  }
     //  console.log(this.item);
+    this.doRefresh(0);
+
+
+  }
+  doRefresh(refresh){
     this.dataFatch();
-    console.log(this.dataFatch())
 
+    if (refresh !=0){
+      setTimeout(() => {
+        console.log('Async operation has ended');
+        refresh.complete();
+      }, 2000);
 
+    }
   }
 
   ionViewDidLoad() {
