@@ -2,6 +2,8 @@ import { Component, ViewChild} from '@angular/core';
 import { Platform,Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { MaindataProvider } from '../providers/maindata/maindata';
+
 
 
 
@@ -14,7 +16,10 @@ export class MyApp {
   @ViewChild(Nav) nav:Nav;
   pages: Array<{title: string, component: any}>;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,) {
+  dataS:any;
+
+
+constructor(platform : Platform, statusBar : StatusBar, splashScreen : SplashScreen, public datalink : MaindataProvider) {
 
 
     platform.ready().then(() => {
@@ -45,4 +50,12 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.push(page.component);
   }
+  search(){
+    this.nav.push('SearchPage');
+
+  }
+
+
+
+
 }

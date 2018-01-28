@@ -27,15 +27,12 @@
         </ion-card-content>
 
         <ion-row>
-
-
             <ion-col center text-center>
                 <ion-note>
                     {{user.created_at|dateform }}
                 </ion-note>
             </ion-col>
         </ion-row>
-
     </ion-card>
     <!--*ngIf="totalData == totalPage"-->
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)">

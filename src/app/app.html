@@ -1,20 +1,23 @@
-<ion-menu [content]="content" color="twitter">
-    <ion-header>
-        <ion-toolbar color="twitter">
-            <ion-title>Menu</ion-title>
-            <ion-searchbar></ion-searchbar>
-        </ion-toolbar>
+<ion-split-pane>
+    <ion-menu [content]="content" color="twitter">
+        <ion-header>
+            <ion-toolbar color="twitter">
+                <ion-title>Menu</ion-title>
 
-    </ion-header>
-    <ion-title>dbc</ion-title>
+            </ion-toolbar>
 
-    <ion-content>
-        <ion-list lines>
-            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        </ion-header>
+        <ion-title>dbc</ion-title>
+
+        <ion-content class="background-pale">
+
+            <ion-list lines>
+                <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
       <p style=" color:black;">{{p.title}}</p>
     </button>
-        </ion-list>
-    </ion-content>
+            </ion-list>
+        </ion-content>
 
-</ion-menu>
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+    </ion-menu>
+    <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>
+</ion-split-pane>

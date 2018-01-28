@@ -3,7 +3,7 @@
         width: 100%;
         display: none;
     }
-    
+
     .toolbar-title {
         display: block;
         overflow: hidden;
@@ -12,11 +12,11 @@
         white-space: nowrap;
         text-align: center;
     }
-    
+
     .button-md:hover:not(.disable-hover) {
         background-color: #f02929;
     }
-    
+
     .button-md {
         border-radius: 2px;
         overflow: hidden;
@@ -35,7 +35,8 @@
         margin: 0.4rem 0.2rem;
         padding: 0 1.1em;
     }
-    
+
     .toolbar-md {
         min-height: 46px;
     }
+

@@ -68,5 +68,10 @@ getvoganti(){
   return  this.http.get('http://182.48.84.88:8080/v');
 }
 
+//search
+search(key){
+  return this.http.get('localhost:4000/search/?headline='+key+"");
+}
+
 
 }

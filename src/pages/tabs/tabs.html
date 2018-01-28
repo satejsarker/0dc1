@@ -1,24 +1,21 @@
-<style>
+<!-- <style>
     .hed-border {
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-    
+
     .hed-border img {
         padding-left: 6%;
     }
-</style>
+</style> -->
 <ion-header color="twitter">
-
     <button ion-button menuToggle class="hed-border">
     <ion-icon  color="dark"name="menu"></ion-icon>
    <img src="assets/log1.png">
     <!--<button ion-button >DBC NEWS</button>-->
     </button>
 
-
 </ion-header>
-
 <super-tabs toolbarBackground="danger">
     <!-- <super-tab [root]="tab1Root" color="androidprimary" title="Home"></super-tab> -->
     <super-tab [root]=jatiow></super-tab>
@@ -32,12 +29,25 @@
     <super-tab [root]=saradesh title="সারাদেশ"></super-tab>
     <super-tab [root]=shongskriti title="সংস্কৃতি"></super-tab>
     <super-tab [root]=voganti title="ভোগান্তি"></super-tab>
-
-    <!--  <super-tab [root]=tab2Root title="About"></super-tab>
-  <super-tab [root]=tab3Root title="Contact"></super-tab> -->
 </super-tabs>
 <ion-footer>
     <ion-toolbar color="dark">
-        <ion-title align="center"> &copy; DBC news 24/7</ion-title>
+        <ion-title > &copy; DBC NEWS 24/7</ion-title>
     </ion-toolbar>
 </ion-footer>
+<!--
+<ion-footer>
+     <ion-toolbar color="dark">
+        <ion-title align="center"> &copy; DBC NEWS 24/7
+            <!-- <ion-icon *ngIf="!toggled" (click)="toggle()" name="search"></ion-icon> -->
+<!-- <ion-searchbar *ngIf="toggled" [showCancelButton]="true" spellcheck="true"  (ionCancel)="cancelSearch($event)"> </ion-searchbar> -->
+<!-- </ion-title> -->
+
+<!-- [(ngModel)]="someValue" (ionInput)="searchThis($event)" (ionCancel)="cancelSearch($event)" (ionClear)="cancelSearch($event)" [showCancelButton]="true"
+
+
+
+    </ion-toolbar>
+
+</ion-footer>
+-->

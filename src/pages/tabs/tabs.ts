@@ -12,6 +12,7 @@ import { IonicPage } from 'ionic-angular';
 
 })
 export class TabsPage {
+public toggled : boolean = false;
 
   rajniti:any = 'RajnitiPage';
   jatiow:any = 'JatiowPage';
@@ -28,6 +29,18 @@ export class TabsPage {
 
 
   constructor() {
-
+this.toggled = false;
   }
+
+
+public toggle() : void {
+  this.toggled = this.toggled
+    ? false
+    : true;
+}
+
+cancelSearch($event){
+  this.toggle();
+}
+
 }
