@@ -21,7 +21,7 @@ $app-direction: ltr;
 // to match your app's branding. Ionic uses a Sass map of
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
-$colors: ( primary: #488aff, secondary: #32db64, danger: #f02929, light: #f4f4f4, dark: #222, twitter: ( base: #f02929, contrast: #ffffff), );
+$colors: ( primary: #488aff, secondary: #32db64, danger: #C82027, light: #f4f4f4, dark: #222, twitter: #C82027, );
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -66,3 +66,4 @@ ion-spinner {
 
 $searchbar-ios-border-color:#C82027;
 $searchbar-ios-input-search-icon-color:#C82027;
+$button-round-padding:64;

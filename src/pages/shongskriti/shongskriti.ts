@@ -29,7 +29,7 @@ totalPage = 0;
     //   for (let i=0;i<2;i++){
     //   this.item.push(this.newsAll);
     //  }
-    this.doRefresh(0);
+    this.dataFatch();
 
 
       }

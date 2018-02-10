@@ -1,22 +1,33 @@
-<!-- <style>
+<style>
     .hed-border {
         -webkit-box-shadow: none;
         box-shadow: none;
+        background-color: #C82027;
     }
+    element.style {
+    margin-left: 10px;
+}
+img{
+    margin-left: 5
+}
+.bar-footer {
+  height: 50px;
+  background-color:#C82027;
+  border: 0;
+  position:absolute;
+  margin-bottom: 0%
+}
 
-    .hed-border img {
-        padding-left: 6%;
-    }
-</style> -->
+
+</style>
 <ion-header color="twitter">
-    <button ion-button menuToggle class="hed-border">
+    <button  ion-button menuToggle class="hed-border">
     <ion-icon  color="dark"name="menu"></ion-icon>
-   <img src="assets/log1.png">
+   <img src="assets/logo.png">
     <!--<button ion-button >DBC NEWS</button>-->
     </button>
-
 </ion-header>
-<super-tabs toolbarBackground="danger">
+<super-tabs toolbarBackground="twitter">
     <!-- <super-tab [root]="tab1Root" color="androidprimary" title="Home"></super-tab> -->
     <super-tab [root]=jatiow></super-tab>
     <super-tab [root]=rajniti></super-tab>
@@ -30,11 +41,18 @@
     <super-tab [root]=shongskriti title="সংস্কৃতি"></super-tab>
     <super-tab [root]=voganti title="ভোগান্তি"></super-tab>
 </super-tabs>
+
 <ion-footer>
-    <ion-toolbar color="dark">
-        <ion-title > &copy; DBC NEWS 24/7</ion-title>
-    </ion-toolbar>
-</ion-footer>
+        <ion-toolbar color="twitter">
+                <ion-title style="color:#C82027">
+                        &copy; DBC NEWS 24/7
+                    </ion-title>
+        </ion-toolbar>
+
+  </ion-footer>
+<!-- <ion-footer  scroll="false" style="width: 100%;">
+    
+</ion-footer> -->
 <!--
 <ion-footer>
      <ion-toolbar color="dark">

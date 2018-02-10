@@ -61,19 +61,23 @@ totalPage = 0;
     //     //}
     //   }, 1000);
     // });
-   this.doRefresh(0);
-    console.log(this.dataFatch())
+  
+this.dataFatch();
   }
 
   doRefresh(refresh){
-    this.dataFatch();
+   
 
     if (refresh !=0){
       setTimeout(() => {
         console.log('Async operation has ended');
         refresh.complete();
+       
       }, 1000);
 
+    }
+    else{
+      this.dataFatch();
     }
 
 
@@ -122,9 +126,9 @@ totalPage = 0;
            this.totalPage=this.users.length;
            console.log(this.totalPage+ " -"+this.totalData);
            console.log(this.users.length);
-           if(this.users.length<this.data.length){
-              for(let i=this.totalPage; i<this.totalPage+10; i++) {
-             this.users.push(this.data[i]);
+           if( this.users.length<this.data.length){
+              for(let j=this.totalPage; j<this.totalPage+10; j++) {
+             this.users.push(this.data[j]);
            }
 
            }

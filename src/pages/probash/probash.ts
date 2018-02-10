@@ -30,7 +30,7 @@ totalPage = 0;
     //   this.item.push(this.newsAll);
     //  }
     //  console.log(this.item);
-    this.doRefresh(0);
+    this.dataFatch();
 
 
       }

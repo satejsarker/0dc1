@@ -41,7 +41,7 @@ export class AppModule {
 
 
     // set status bar to white
-    this.statusBar.backgroundColorByHexString('#f02929');
+    this.statusBar.backgroundColorByHexString('#C82027');
     this.statusBar.show();
    }
 }

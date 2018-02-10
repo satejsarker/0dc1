@@ -4,12 +4,7 @@
 
   import { NavController } from 'ionic-angular/navigation/nav-controller';
 
-/**
- * Generated class for the OrthonitiPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -29,7 +24,7 @@ totalPage = 0;
     //   this.item.push(this.newsAll);
     //  }
     //  console.log(this.item);
-    this.doRefresh(0);
+    this.dataFatch();
 
 
       }

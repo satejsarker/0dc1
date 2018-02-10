@@ -19,7 +19,7 @@ totalData = 0;
 totalPage = 0;
 
   constructor(public modalCtral:ModalController,public dataSource:MaindataProvider,private navCtrl:NavController) {
-    this.doRefresh(0);
+    this.dataFatch();
 
 
       }

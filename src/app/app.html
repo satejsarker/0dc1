@@ -1,4 +1,4 @@
-<ion-split-pane>
+
     <ion-menu [content]="content" color="twitter">
         <ion-header>
             <ion-toolbar color="twitter">
@@ -9,7 +9,7 @@
         </ion-header>
         <ion-title>dbc</ion-title>
 
-        <ion-content class="background-pale">
+        <ion-content color="twitter">
 
             <ion-list lines>
                 <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
@@ -20,4 +20,4 @@
 
     </ion-menu>
     <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>
-</ion-split-pane>
+
