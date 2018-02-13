@@ -1,7 +1,7 @@
 
-    <ion-menu [content]="content" color="twitter">
+    <ion-menu [content]="content" class="menu-width" color="twitter" >
         <ion-header>
-            <ion-toolbar color="twitter">
+            <ion-toolbar menuToggle color="twitter">
                 <ion-title>Menu</ion-title>
 
             </ion-toolbar>
@@ -11,9 +11,9 @@
 
         <ion-content color="twitter">
 
-            <ion-list lines>
+            <ion-list lines align="center">
                 <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-      <p style=" color:black;">{{p.title}}</p>
+      <ion-label style=" color:black;" >{{p.title}}</ion-label>
     </button>
             </ion-list>
         </ion-content>

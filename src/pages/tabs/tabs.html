@@ -10,6 +10,7 @@
 img{
     margin-left: 5
 }
+
 .bar-footer {
   height: 50px;
   background-color:#C82027;
@@ -18,12 +19,28 @@ img{
   margin-bottom: 0%
 }
 
+element.style {
+}
+.md ion-footer .toolbar:last-child {
+    padding-bottom: calc(constant(safe-area-inset-top) + 4px);
+    height: calc(56px + constant(safe-area-inset-top));
+    min-height: calc(56px + constant(safe-area-inset-top));
+}
+.toolbar-md {
+    min-height: 48px;
+    box-shadow: unset;
+}
+
 
 </style>
 <ion-header color="twitter">
-    <button  ion-button menuToggle class="hed-border">
-    <ion-icon  color="dark"name="menu"></ion-icon>
-   <img src="assets/logo.png">
+    <button  ion-button menuToggle class="hed-border" style="margin-left: 0%; margin-top: 6px">
+    <ion-icon  color="dark" class="larger" name="menu"></ion-icon>
+   <img src="assets/logo.png" style="
+   margin-top: 3px;
+   margin-left: 1.5;
+   margin-left: 2.5px;
+">
     <!--<button ion-button >DBC NEWS</button>-->
     </button>
 </ion-header>
@@ -43,8 +60,8 @@ img{
 </super-tabs>
 
 <ion-footer>
-        <ion-toolbar color="twitter">
-                <ion-title style="color:#C82027">
+        <ion-toolbar  color="twitter">
+                <ion-title  style="color:#C82027;">
                         &copy; DBC NEWS 24/7
                     </ion-title>
         </ion-toolbar>

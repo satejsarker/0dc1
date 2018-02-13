@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="www.dbcnews.tv" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="dbcnews.tv">
+<widget id="www.dbcnews.tv" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="dbcnews.tv">
     <name>DBC NEWS (Beta) </name>
     <description> DBC NEWS private satellite 24x7 live news channel in Bangladesh owned by Dhaka Bangla Media and Communication LTD. Chairman of the channel as well as Prime Minister’s Media Affairs Adviser Iqbal Sobhan Chowdhury, Managing Director Sahidul Ahsan and Chief Editor and CEO Mohammed Manzurul Islam</description>
     <author email="news@dbcnews.tv" href="https://dbcnews.tv/">Dhaka Bangla Media and Communications Ltd.</author>
