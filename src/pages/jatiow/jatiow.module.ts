@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { JatiowPage } from './jatiow';
 import { PipesModule } from '../../pipes/pipes.module';
+import { DirectivesModule } from '../../directives/directives.module';
 
 
 
@@ -12,7 +13,7 @@ import { PipesModule } from '../../pipes/pipes.module';
   ],
   imports: [
     IonicPageModule.forChild(JatiowPage),
-    PipesModule
+    PipesModule,DirectivesModule
   ],
   exports:[
     JatiowPage

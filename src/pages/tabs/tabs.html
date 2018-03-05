@@ -19,8 +19,7 @@ img{
   margin-bottom: 0%
 }
 
-element.style {
-}
+
 .md ion-footer .toolbar:last-child {
     padding-bottom: calc(constant(safe-area-inset-top) + 4px);
     height: calc(56px + constant(safe-area-inset-top));
@@ -30,11 +29,17 @@ element.style {
     min-height: 48px;
     box-shadow: unset;
 }
+super-tabs{
+    height: 100%;
+}
 
 
 </style>
-<ion-header color="twitter">
-    <button  ion-button menuToggle class="hed-border" style="margin-left: 0%; margin-top: 6px">
+<ion-header   color="twitter">
+    <button  ion-button menuToggle  class="hed-border"  style="
+    border-right-width: 2px;
+    margin-left: 0px;
+">
     <ion-icon  color="dark" class="larger" name="menu"></ion-icon>
    <img src="assets/logo.png" style="
    margin-top: 3px;
@@ -44,22 +49,23 @@ element.style {
     <!--<button ion-button >DBC NEWS</button>-->
     </button>
 </ion-header>
-<super-tabs toolbarBackground="twitter">
+<super-tabs >
     <!-- <super-tab [root]="tab1Root" color="androidprimary" title="Home"></super-tab> -->
+    
     <super-tab [root]=jatiow></super-tab>
     <super-tab [root]=rajniti></super-tab>
-    <super-tab [root]=antorjatik title="আন্তর্জাতিক"></super-tab>
+    <super-tab [root]=antorjatik></super-tab>
     <super-tab [root]=Khela></super-tab>
-    <super-tab [root]=krishi title="কৃষি"></super-tab>
-    <super-tab [root]=nari title="নারী"></super-tab>
-    <super-tab [root]=Orthoniti title="অর্থনীতি"></super-tab>
-    <super-tab [root]=probash title="প্রবাস"></super-tab>
-    <super-tab [root]=saradesh title="সারাদেশ"></super-tab>
-    <super-tab [root]=shongskriti title="সংস্কৃতি"></super-tab>
-    <super-tab [root]=voganti title="ভোগান্তি"></super-tab>
+    <super-tab [root]=krishi></super-tab>
+    <super-tab [root]=nari></super-tab>
+    <super-tab [root]=Orthoniti></super-tab>
+    <super-tab [root]=probash></super-tab>
+    <super-tab [root]=saradesh></super-tab>
+    <super-tab [root]=shongskriti></super-tab>
+    <super-tab [root]=voganti></super-tab>
 </super-tabs>
 
-<ion-footer>
+<ion-footer class="f" >
         <ion-toolbar  color="twitter">
                 <ion-title  style="color:#C82027;">
                         &copy; DBC NEWS 24/7

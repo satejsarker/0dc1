@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MaindataProvider } from '../providers/maindata/maindata';
 import{HttpClientModule} from '@angular/common/http'
 import   {Network} from '@ionic-native/network';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import   {Network} from '@ionic-native/network';
     SplashScreen,
     Network,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MaindataProvider
+    MaindataProvider,
+    SocialSharing
   ],
 })
 export class AppModule {

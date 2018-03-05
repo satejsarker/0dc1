@@ -2,25 +2,29 @@
     .button-fix {
         position: absolute;
     }
+    
 </style>
-<ion-header>
-
+<ion-header class="head" color="danger" #head >
+    
+      
     <ion-toolbar color="danger">
-        <ion-title>বিস্তারিত</ion-title>
-
+        <ion-title>বিস্তারিত </ion-title>
+      
     </ion-toolbar>
     <button ion-button (click)=dismiss() class="button-fix button-f"><ion-icon name="close"></ion-icon></button>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding otherhide [header]="head">
+    
+     
     <div ion-card>
-
+           
         <!-- Normal Demo-->
 
         <div class="column">
+             
             <!--<ion-title>অবাধ-সুষ্ঠু নির্বাচন চায় ভারত: বিএনপি</ion-title>-->
             <!-- Post-->
 
@@ -31,16 +35,25 @@
 
                 </div><img src="{{DATA.photo}}" />
             </div>
-            <!-- Post Content-->
+            <!-- Post Content--><div align="center" style="">
+                    <button  style="background-color: transparent;
+                    margin-left:  345;padding-left: 330px;"
+                    (click)="fbShare()" style="background-color: transparent;"
+                    
+                   
+                     ><ion-icon name="share" style="color: #C82027; font-size: 2.0em" ></ion-icon></button>
+            </div>
 
             <div class="ion-content">
-                <br>
                 <h1 class="title" style="font-size:large; font-weight:bold; text-align: center;"> {{DATA.headline}} </h1>
                 <h2 class="sub_title"></h2>
                 <p class="description" [innerHTML]="DATA.description">
                 </p>
                 <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-"></i>{{DATA.created_at|dateform}} </span><span class="comments"></span></div>
+               
             </div>
+           
         </div>
+    
     </div>
 </ion-content>

@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <script src="assets/moment.js"></script>
-<ion-header>
+<ion-header class="head" #head>
 
     <ion-navbar color="danger">
 
@@ -15,7 +15,7 @@
 </ion-header>
 
 
-<ion-content fullscreen>
+<ion-content fullscreen otherhide [header]="head">
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
         </ion-refresher-content>

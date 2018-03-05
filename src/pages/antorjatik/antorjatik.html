@@ -1,39 +1,43 @@
-<ion-header>
 
-    <ion-navbar color="danger">
+<!--
+  Generated template for the ShonskritiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+ <script src="assets/moment.js"></script>
+<ion-header class="head" color="danger" #head>
+
+    <ion-navbar  class="hoy" color="danger">
 
         <ion-title>আন্তর্জাতিক</ion-title>
     </ion-navbar>
 
-</ion-header>
+</ion-header> 
 
 
-<ion-content fullscreen>
+<ion-content fullscreen otherhide [header]="head">
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
         </ion-refresher-content>
     </ion-refresher>
     <ion-card *ngFor='let user of users' (click)="details(user)">
-
         <img src="{{user.photo}}" />
-
-        <ion-card-content>
+        <ion-card-content style="text-align:center;">
             {{user.headline}}
         </ion-card-content>
 
         <ion-row>
-
-
             <ion-col center text-center>
                 <ion-note>
                     {{user.created_at|dateform }}
                 </ion-note>
             </ion-col>
         </ion-row>
-
     </ion-card>
     <!--*ngIf="totalData == totalPage"-->
-    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll  (ionInfinite)="doInfinite($event)">
         <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
     </ion-infinite-scroll>
 </ion-content>

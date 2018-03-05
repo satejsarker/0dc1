@@ -1,6 +1,11 @@
-<ion-header>
+<style>
+    .hoy{
+        opacity: 1;
+    }
+</style>
+<ion-header #head  color="danger">
 
-    <ion-navbar color="danger">
+    <ion-navbar  color="danger" class="hoy"   >
 
         <ion-title>খেলা</ion-title>
     </ion-navbar>
@@ -8,33 +13,27 @@
 </ion-header>
 
 
-<ion-content fullscreen>
+<ion-content fullscreen otherhide [header]="head">
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
         </ion-refresher-content>
     </ion-refresher>
-
     <ion-card *ngFor='let user of users' (click)="details(user)">
-
         <img src="{{user.photo}}" />
-
         <ion-card-content style="text-align:center;">
             {{user.headline}}
         </ion-card-content>
 
         <ion-row>
-
-
             <ion-col center text-center>
                 <ion-note>
                     {{user.created_at|dateform }}
                 </ion-note>
             </ion-col>
         </ion-row>
-
     </ion-card>
     <!--*ngIf="totalData == totalPage"-->
-    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll  (ionInfinite)="doInfinite($event)">
         <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
     </ion-infinite-scroll>
 </ion-content>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { KhelaPage } from './khela';
 import { PipesModule } from '../../pipes/pipes.module';
+import { DirectivesModule } from '../../directives/directives.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { PipesModule } from '../../pipes/pipes.module';
   imports: [
     PipesModule,
     IonicPageModule.forChild(KhelaPage),
+    DirectivesModule
 
   ],
   exports:[
